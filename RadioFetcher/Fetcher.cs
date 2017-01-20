@@ -83,8 +83,7 @@ namespace RadioFetcher
 				var statename = hey.Key;
 
 				stateindex++;
-				if (stateindex < 23)
-					continue;
+
 
 				int localIndex = 0;
 
