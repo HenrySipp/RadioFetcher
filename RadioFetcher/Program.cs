@@ -38,12 +38,11 @@ namespace RadioFetcher
 				{
 					var stationinfos = pair.Value;
 					//write it incase we fuck up!
-
-
 					var woahtherebuddy = JsonConvert.SerializeObject(stationinfos, Formatting.Indented);
 					System.IO.File.WriteAllText(path + $"/RadioData/{pair.Key}.json", woahtherebuddy);
 				}
 
+				//transfer to sql db
 			}).Wait();
 		}
 

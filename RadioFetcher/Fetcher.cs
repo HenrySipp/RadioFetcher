@@ -83,6 +83,8 @@ namespace RadioFetcher
 				var statename = hey.Key;
 
 				stateindex++;
+				if (stateindex < 23)
+					continue;
 
 				int localIndex = 0;
 
@@ -102,7 +104,7 @@ namespace RadioFetcher
 						etaTime = new TimeSpan(0, 0, 0, 0, eta);
 					}
 					//Console.Clear();
-					Console.SetCursorPosition(0, stateindex);
+					Console.SetCursorPosition(0, 0);
 					Console.Out.WriteLine($"Fetch State {statename} ({stateindex} / {states.Count}) ... Station ( {localIndex} / {stationurls.Count}) ({urlindex} / {totalStationUrlCount}) ... { (((float)urlindex / (float)totalStationUrlCount)).ToString("P") }  ETA: { etaTime.ToString(@"hh\:mm\:ss") }");
 					//	Console.Out.WriteLine($"Fetch Station {i + 1} / {stationUrls.Count} ... { (((float)i / (float)stationUrls.Count)).ToString("P") }  ETA: { etaTime.ToString(@"hh\:mm\:ss") }");
 
