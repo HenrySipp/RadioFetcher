@@ -202,6 +202,7 @@ namespace RadioFetcher
 				return null;
 
 
+
 			var table = infobox.QuerySelector("tbody");
 			Dictionary<string, string> info = new Dictionary<string, string>();
 			foreach (var row in table.Children)
@@ -214,6 +215,12 @@ namespace RadioFetcher
 					info[key] = val;
 				}
 			}
+
+
+			var lastSlashPos = url.LastIndexOf('/');
+
+			var callsign = url.Substring(lastSlashPos + 1);
+			info["callsign"] = callsign; //title.TextContent.ToString();
 			return info;
 		}
 
