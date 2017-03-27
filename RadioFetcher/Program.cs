@@ -20,20 +20,16 @@ namespace RadioFetcher
 
 		public static void Main(string[] args)
 		{
-
-
+			
 			var fetchOrProcess = "Process";
 
 			Task.Run(async () =>
 			{
 				if (fetchOrProcess == "Process")
 				{
-
 					await Processor.Process();
-
 				}
 				else {
-
 					Dictionary<string, List<Dictionary<string, string>>> stationInfosByState = await Fetcher.FetchStationUrlsPerState();
 
 
@@ -49,7 +45,6 @@ namespace RadioFetcher
 						System.IO.File.WriteAllText(path + $"/RadioData/{pair.Key}.json", woahtherebuddy);
 					}
 				}
-				//transfer to sql db
 			}).Wait();
 		}
 
